@@ -7,8 +7,6 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  /* color: rgba(255, 255, 255, 0.87);
-  background-color: #242424; */
   color: #5c5c5c;
   background-color: #e0e0e0;
 
@@ -19,13 +17,9 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+table {
+  border-collapse: collapse;
+  width: 100%;
 }
 
 p {
@@ -41,17 +35,14 @@ body {
   min-width: 320px;
   min-height: 100vh;
   width: 100%;
-  /* color: #5c5c5c;
-  background-color: #fff;
   font-family: 'Noto Sans KR', 'Inter', '-apple-system', 'BlinkMacSystemFont',
     'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif',
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; */
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
 button {
   border-radius: 4px;
-  border: 1px solid #d4d9e1;
-  padding: 0.6rem 1.2rem;
+  border: none;
   font-size: 1rem;
   font-weight: 400;
   font-family: inherit;
@@ -60,85 +51,53 @@ button {
   cursor: pointer;
   transition: background-color 0.25s;
 }
-button:hover {
-  background-color: #646cff;
+button:focus {
+  outline: none;
 }
-
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
-
+button:hover {
+  background-color: #d4d9e1;
+}
 input {
   font-family: 'Noto Sans KR';
   font-size: 1rem;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-textarea {
-  font-family: 'Noto Sans KR';
-  /* caret-color: #00a2ff; */
-  color: #454545;
-}
-input[type='text'],
-input[type='button'],
-select {
-  color: #454545;
-}
-input[type='submit'] {
-  cursor: pointer;
-}
-input {
   vertical-align: middle;
-}
-a {
-  text-decoration: none;
-  color: #5c5c5c;
-  transition-duration: 0.3s;
+  color: #454545;
 }
 input:focus {
   outline: none;
 }
-select:focus,
-option:focus,
-textarea:focus,
-button:focus {
-  outline: none;
+
+a {
+  text-decoration: none;
+  color: #039be5;
+  transition-duration: 0.3s;
 }
-button {
-  font-family: 'Noto Sans KR';
-}
+
 input[type='text'] {
   border-radius: 4px;
   background-color: #ffffff;
-  padding: 0.6rem 1.2rem;
+  padding: 0.6rem 2rem 0.6rem 1.2rem;
   outline: none;
   border: 1px solid #d4d9e1;
 }
-input[type='number'] {
-  padding-left: 12px;
-  padding-right: 12px;
-  border-radius: 4px;
-  box-sizing: border-box;
+
+.dp_flex_center {
+  display: flex;
+  align-items: center;
 }
-input[type='time'] {
-  padding: 10px;
-  border: 1px solid #d4d9e1;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-family: Noto Sans KR;
-  color: #2f2f37;
-  min-width: 120px;
+
+.mt05rem {
+  margin-top: 0.5rem;
+}
+
+.mb05rem {
+  margin-bottom: 0.5rem;
+}
+
+.mt1rem {
+  margin-top: 1rem;
+}
+
+.mb1rem {
+  margin-bottom: 1rem;
 }

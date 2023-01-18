@@ -1,23 +1,17 @@
-import { Route, Routes, useNavigate, useLocation } from 'react-router-dom';
-import reactLogo from './assets/react.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
 import { Home } from './component/home/Index';
-import { SideNavi } from './component/sideNavi/Index';
-import { IssueList } from './component/home/IssueList';
+import { IssuePage } from './component/home/IssuePage';
+import { TopNavi } from './component/navi/TopNavi';
 
 function App() {
-  const a = 1;
   return (
     <div>
-      <SideNavi />
-      <div
-        css={{
-          paddingLeft: '350px',
-        }}
-      >
+      <TopNavi />
+      <div css={{ padding: '8vh 1rem 0' }}>
         <Routes>
+          <Route path='*' element={<Home />} />
           <Route path='/' element={<Home />} />
-          <Route path='/issue' element={<IssueList />} />
+          <Route path='/issue' element={<IssuePage />} />
         </Routes>
       </div>
     </div>

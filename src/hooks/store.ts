@@ -7,11 +7,8 @@ const xapi = axios.create({
   baseURL: `${VITE_HOST}`,
   headers: {
     Authorization: `Bearer ${VITE_GITHUB_ID}`,
-    // 'Access-Control-Allow-Origin': '*',
     'Content-Type': 'application/json',
     Accept: 'application/json, text/plain',
-    // 'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
-    // 'Access-Control-Allow-Credentials': true,
   },
 });
 
@@ -25,15 +22,12 @@ interface idX {
 }
 
 export const Store = {
-  async fetch<T extends iX>(model: string, idcmd?: number | string) {
-    const res = await this.get<T>(idcmd ? `${model}/${idcmd}` : `${model}`);
-    return res.data;
-  },
-
   finds<T extends iX>(model: string, params?: {}) {
-    return () => this.fetches<T>(model, params);
+    return () =>
+      this.fetches<T>(model, params).catch(err => {
+        return err.response.status;
+      });
   },
-
   async fetches<T extends iX>(model: string, params?: {}) {
     const url =
       params && Object.keys(params).length

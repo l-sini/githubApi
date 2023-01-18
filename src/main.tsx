@@ -3,7 +3,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { RecoilRoot } from 'recoil';
 import ReactDOM from 'react-dom/client';
-import { Resize } from './hooks/resize';
 import App from './App';
 import './index.css';
 import { IntlProvider } from 'react-intl';
@@ -22,16 +21,14 @@ const reactQueryClient = new QueryClient({
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <Resize>
-      <Router>
-        <QueryClientProvider client={reactQueryClient}>
-          <IntlProvider locale='ko' defaultLocale='ko'>
-            <RecoilRoot>
-              <App />
-            </RecoilRoot>
-          </IntlProvider>
-        </QueryClientProvider>
-      </Router>
-    </Resize>
+    <Router>
+      <QueryClientProvider client={reactQueryClient}>
+        <IntlProvider locale='ko' defaultLocale='ko'>
+          <RecoilRoot>
+            <App />
+          </RecoilRoot>
+        </IntlProvider>
+      </QueryClientProvider>
+    </Router>
   </React.StrictMode>
 );
